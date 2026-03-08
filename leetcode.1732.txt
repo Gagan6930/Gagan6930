@@ -1,0 +1,14 @@
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int max=0,a=0;
+
+        for (int i:gain){
+            a+=i;   //every element will go to add to the "a" variable 
+            if(a>max)//checks weather the a is greater than the max
+            max=a;
+
+        }
+        return max;
+    }
+  
+}
