@@ -1,14 +1,14 @@
 class Solution {
-    public int largestAltitude(int[] gain) {
-        int max=0,a=0;
-
-        for (int i:gain){
-            a+=i;   //every element 
-            if(a>max)
-            max=a;
-
+    public int lengthOfLastWord(String s) {
+        int i=s.length()-1;
+        while(i>=0 && s.charAt(i)== ' '){.///trims the spaces of the string in the last 
+            i--;
         }
-        return max;
+        int count=0;
+        while(i>=0 && s.charAt(i)!= ' '){///counts the charcters of the last word in the  String utill the spaces found in the String
+            count++;
+            i--;
+        }
+        return count;
     }
-  
 }
