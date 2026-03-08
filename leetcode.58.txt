@@ -1,0 +1,14 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+        int i=s.length()-1;
+        while(i>=0 && s.charAt(i)== ' '){//used to trim the last space of the string... 
+            i--;
+        }
+        int count=0;//count the characters in the last word of the String ...
+        while(i>=0 && s.charAt(i)!= ' '){//if not spaces in the string then counts the character of the last word 
+            count++;
+            i--;
+        }
+        return count;//number of characters in the last world
+    }
+}
