@@ -1,0 +1,18 @@
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+     
+        int r=numbers.length-1;
+        int l=0;
+      while(l<r)  {
+        int sum = numbers[l]+numbers[r];//check the sum of the two points .....
+        if(sum==target){
+            return new int []{l+1,r+1};//print the index of the two values in the new array [] {}-->are the values ..........
+        }else if(sum>target){
+            r--;///inputs are in the sorted so decrease the values of the elements
+        }else{
+            l++;///increase the values of the elements of the arrays
+        }
+      }
+      return new int []{-1,-1};
+    }
+}
