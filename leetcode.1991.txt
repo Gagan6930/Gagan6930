@@ -1,0 +1,18 @@
+class Solution {
+    public int findMiddleIndex(int[] nums) {
+        int to=0;
+      for(int i:nums){
+         to+=i;
+      }  
+      int l=0;
+      for(int j=0;j<nums.length;j++){
+        int r=to-l-nums[j];
+if(r==l){
+        return j;
+      }
+        l+=nums[j];
+      
+    }
+    return -1;
+    }
+}
