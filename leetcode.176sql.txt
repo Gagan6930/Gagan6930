@@ -1,0 +1,7 @@
+leetcode 
+
+176. Second Highest Salary(using the subquery concept)
+
+SELECT MAX(salary) SecondHighestSalary
+FROM Employee 
+WHERE salary < (select Max(salary) FROM Employee);
