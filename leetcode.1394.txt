@@ -1,0 +1,22 @@
+leetcode:1394.Find Lucky Integer in an Array
+
+class Solution {
+    public int findLucky(int[] arr) {
+       HashMap<Integer,Integer> h=new HashMap<>();
+       for(int i:arr){
+        
+        if(h.containsKey(i)){ //finds the which element present how many times it will prints the count and stores in the hashamp....
+           
+
+           h.put(i,h.get(i)+1);
+        }else{
+            h.put(i,1);
+        }
+       } int max=-1;//first max is -1 initialize....
+       for(int k : h.keySet()) {//it will checks the hashmap elements one by one 
+if(k==h.get(k)){                   //checks wheather the element and number of the times elements appearing equals to the element ..... 
+    max=Math.max(max,k);           //check which key is the max elements in the hashmap
+}
+       }return max;
+    }
+}
