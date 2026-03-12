@@ -1,0 +1,4 @@
+leetcode 
+
+182. Duplicate Emails: (using the group by function having cluse);
+select email from person group by email having count(email)>1;
