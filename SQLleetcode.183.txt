@@ -1,0 +1,5 @@
+leetcode 
+
+
+183. Customers Who Never Order (using the subquery cocenpt);
+select name 'Customers' from Customers where id not in (select customerId from Orders)
