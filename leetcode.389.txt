@@ -1,0 +1,14 @@
+389. Find the Difference
+
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int xor=0;
+        for(char x:s.toCharArray()){ //iterates all the char in the s string ..... 
+            xor=xor^x;
+        }
+        for(char f:t.toCharArray()){ //iterates all the char in the t string ....
+            xor=xor^f;
+        }
+        return (char)(xor); //returns the remaining or the extra char stored in the xor .........
+            }
+}
