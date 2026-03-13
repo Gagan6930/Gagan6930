@@ -1,0 +1,10 @@
+leetcode 196:
+
+
+196. Delete Duplicate Emails
+
+delete pone
+ from person pone 
+ join person ptwo
+ on pone.email=ptwo.email 
+ and pone.id>ptwo.id;
