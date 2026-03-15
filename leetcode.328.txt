@@ -1,0 +1,20 @@
+
+328. Odd Even Linked List
+
+
+class Solution {
+    public ListNode oddEvenList(ListNode head) {
+        if(head==null) return null;  //if the head is null then return null............
+        ListNode odd=head;           //head starts from one and one is odd we know 
+        ListNode even=head.next;     //after the odd even number definity will come so decleared as even 
+        ListNode evenhead=even;       
+        while(even!=null && even.next!=null){  //check until till the even is null and odd is null .................
+odd.next=even.next;
+odd=odd.next;
+even.next=odd.next;
+even=even.next;
+        }
+        odd.next=evenhead;
+        return head;
+    }
+}
