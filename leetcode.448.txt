@@ -1,0 +1,18 @@
+448. Find All Numbers Disappeared in an Array
+
+
+class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        HashSet<Integer> h=new HashSet<>();
+        for(int i:nums){                //loading into the hashset to find the element which is missing
+           h.add(i);
+             }
+            List<Integer> l=new ArrayList<>();
+            for(int j=1;j<=nums.length;j++){  //checking which element is missing in the given array...
+if(!h.contains(j)){
+    l.add(j);
+}
+            }
+        return l;
+    }
+}
