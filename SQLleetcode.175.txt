@@ -1,0 +1,9 @@
+leetcode 175:
+
+
+175. Combine Two Tables
+
+select p.firstName,p.lastName,a.city,a.state 
+from Person p left join 
+address a on 
+a.personId=p.personId;
