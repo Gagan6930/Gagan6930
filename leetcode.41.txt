@@ -1,0 +1,18 @@
+
+41. First Missing Positive
+
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        HashSet<Integer> h=new HashSet<>(); 
+        for(int i:nums){
+            h.add(i);  //loading all the elements to the hashSet we known that set wont allow that duplicate elements
+        }
+        int i=1; //we know that positive number starts from 1 
+       while(1==1){
+            if(!h.contains(i)){  //check weather the number is present in the hashset if present go to the next element
+                return i;  //not present means then return that return.....
+            }
+            i++;  //keep on increment the i ....
+        }
+    }
+}
