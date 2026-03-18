@@ -1,0 +1,21 @@
+
+205. Isomorphic Strings
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        char [] s1=s.toCharArray(); //convert the String into the array
+        char [] s2=t.toCharArray(); //convert the String into the array
+        HashMap<Character,Character> h=new HashMap<>();
+    for(int i=0;i<=s1.length-1;i++){      //start the iteration of s1 array 
+        if(h.containsKey(s1[i]) && h.get(s1[i])!=s2[i]){  //that key already present in the hashMap and also output of the hashMap of s1. element is not equal to s2.elment... 
+            return false;
+
+        }else if(!h.containsKey(s1[i]) && h.containsValue(s2[i])){ //the key not contains in the hashmap but hashmap contains the value it means show duplicate values
+            return false; 
+        }else{
+            h.put(s1[i],s2[i]);  //if not insert the new key and the value
+        }
+    }
+    return true;
+    }
+}
