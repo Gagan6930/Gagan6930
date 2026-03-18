@@ -1,0 +1,18 @@
+141. Linked List Cycle
+check weather the linked List contained cycle or not
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        ListNode l=head;
+        HashSet h= new HashSet();
+        while(head!=null){    ///check until the head node becomes null ......
+            if(h.contains(head)){
+                return true;  ///head contains already exiting node address then the return the true
+            }else{
+                h.add(head);  //frist time appears means then add to the Set as the address
+                head=head.next;  //and start the head as the next node 
+                         }
+    
+    }
+    return false;
+}}
