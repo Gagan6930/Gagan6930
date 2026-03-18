@@ -1,0 +1,27 @@
+1207. Unique Number of Occurrences
+in this problem we have check the unique frequency not the repeated values 
+
+class Solution {
+    public boolean uniqueOccurrences(int[] arr) {
+        HashMap<Integer,Integer> h=new HashMap<>();
+        for(int i:arr){
+            if(h.containsKey(i)){
+                h.put(i,h.get(i)+1);
+              
+            }else{
+                h.put(i,1);
+            }
+//upto here we know that checking the repeated ones and loading to the hashMap 
+        }
+        HashSet<Integer> h2=new HashSet<>();
+        for(int f:h.values()){   //iterating the hashMap of the values only not the both
+            if(h2.contains(f)){  //checking the frequency of the elments are duplicate or not...
+                return false;
+            }else{
+                h2.add(f);
+            }
+        }
+        return true;
+        
+    }
+}
