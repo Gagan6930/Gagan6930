@@ -1,0 +1,24 @@
+349. Intersection of Two Arrays
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> h=new HashSet<>();
+        HashSet<Integer> h2=new HashSet<>();
+        for(int i:nums1){  //load all the elments to the hashSet;
+            h.add(i);
+        }
+        for(int i:nums2){
+            if(h.contains(i)){ //check weather the elment is present in the nums2;
+                h2.add(i);      //present add to the second HashSet..
+                 }
+        }
+        int ans[]=new int[h2.size()];   //convert them to the array by the hashSet..bcz we need the answer in the array form
+        int j=0; 
+        for(int i:h2){
+            ans[j]=i;
+            j++;
+        }
+        return ans;
+
+    }
+}
