@@ -1,0 +1,23 @@
+202. Happy Number
+
+class Solution {
+    public boolean isHappy(int n) {
+        HashSet<Long> h=new HashSet<>();
+       
+        while(n!=1){  //run until the n becomes 1;;;
+           long sum=0;
+           while(n!=0){ //we known that to exact the last digit this while loop
+            int r=n%10;
+            n/=10;
+            sum=sum+(r*r);  ///to add the sqrt of the last digit
+         }
+           if(h.contains(sum)){
+            return false;  //if the sum of the two numbers already exists means no need to execute the logic again bcz same number will get 
+           }else{
+            h.add(sum);
+           }
+           n=(int)sum; //coverting the long sum into the int sum;;;;;
+        }
+        return true;
+    }
+}
