@@ -1,0 +1,39 @@
+18. 4Sum  (same as the 3 sum only bus we need to add num in the from of Long because the test case well contains the long numbers)
+
+class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+       List<List<Integer>> h1=new ArrayList<>();
+        Arrays.sort(nums);
+      
+        int i=0;
+        while(i<=nums.length-1){
+            int j=i+1;
+            while(j<=nums.length-1){
+                int k=j+1;
+                int l=nums.length-1;
+                while(k<l){
+                    List<Integer> l1=new ArrayList<>();
+                    long sum=(long) nums[i]+nums[j]+nums[k]+nums[l];
+                    if(sum==target){
+                        	  l1.add(nums[i]);
+                        l1.add(nums[j]);
+                        l1.add(nums[k]);
+                        l1.add(nums[l]);
+                        if(!h1.contains(l1))
+                        h1.add(l1);
+                        l--;
+                        k++;
+                    }else if(sum>target){
+                        l--;
+ }else{
+                        k++;
+                    }
+                }
+                j++;
+            }
+            i++;
+        }
+        
+        return h1;
+    }
+}
