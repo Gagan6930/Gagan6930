@@ -1,0 +1,31 @@
+20. Valid Parentheses
+
+class Solution {
+    public boolean isValid(String s) {
+        LinkedList<Character> L=new LinkedList<>();
+        for(char x:s.toCharArray()){
+            if(x=='(' || x=='{' || x=='['){    //push to the LinkedList 
+                L.addLast(x);
+            }
+            else if(L.size()!=0 && x==')' && L.peekLast()=='('){ // if the same char and lastpeek char is prefect match then remove the last char from the Linked List
+                L.removeLast();
+
+            }else if(L.size()!=0 && x==']' && L.peekLast()=='['){ // if the same char and lastpeek char is prefect match then remove the last char from the Linked List
+
+                L.removeLast();
+            }else if(L.size()!=0 && x=='}' && L.peekLast()=='{'){ // if the same char and lastpeek char is prefect match then remove the last char from the Linked List
+
+               L.removeLast();
+               }
+               else{
+                return false;  //not prefect match also return false 
+               }
+            }
+            if(L.size()!=0){  //if the size is not zero the also false
+                return false;
+            }
+        return true;
+        }
+    }
+
+		
