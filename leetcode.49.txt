@@ -1,0 +1,24 @@
+49. Group Anagrams
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+         HashMap<String, List<String>> h = new HashMap<>();
+        for(String i:strs){
+            char[] c=i.toCharArray(); //checking the each and every element by the sorting the elements
+            Arrays.sort(c);
+
+            String k=new String(c);  //convert them  into the String again 
+
+        
+        if(!h.containsKey(k)){       //if the key is not contained in the hashMap
+            h.put(k,new ArrayList<>());  //then put the key into the hashMap and new arrayList
+        }
+          
+            h.get(k).add(i); //add the output to the new List 
+        
+        }
+        return new ArrayList<>(h.values()); returning the values as same in the elemnts
+    }
+}	
+
+		
