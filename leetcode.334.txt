@@ -1,0 +1,27 @@
+334. Increasing Triplet Subsequence
+
+class Solution {
+    public boolean increasingTriplet(int[] nums) {
+     int pre[]=new int[nums.length];
+      int suf[]=new int[nums.length];
+      if(nums.length<3){    //if the nums length is not three means return false..............
+        return false;
+      }
+      pre[0]=nums[0];
+      for(int i=1;i<=nums.length-1;i++){  //compare and store the smallest values from nums array 
+        pre[i]=Math.min(nums[i],pre[i-1]); //comparsion to the current value and the prefix values
+      }
+suf[nums.length-1]=nums[nums.length-1];
+      for(int i=nums.length-2;i>=0;i--){  ///compare and store the largest values from nums array  
+        suf[i]=Math.max(nums[i],suf[i+1]);  //caomparsion to the current value and the suffix values
+      }
+      for(int i=1;i<=nums.length-2;i++){
+        if(pre[i-1]<nums[i] && nums[i]<suf[i+1]){  //compare the and checking the three number are in the sorted or not and returning
+            return true;
+        }
+      }
+      return false;
+    }
+}	
+
+		
