@@ -1,0 +1,18 @@
+203. Remove Linked List Elements
+
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode h=new ListNode(-1);
+        ListNode tail=h;  // adding the elment to the h.............
+        ListNode cur=head;  //pointing to the head to curr..............
+        while(cur!=null){       //checking until the node becomes to null..........
+            if(cur.val!=val){       //if the current val equal to the current val.........
+                tail.next=new ListNode(cur.val);     //add that curr.node to the new Listnode  
+                tail=tail.next;
+            }
+            cur=cur.next;  //point the current to the next node
+        }
+        return h.next;
+    }
+}
+		
