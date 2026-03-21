@@ -1,0 +1,17 @@
+121. Best Time to Buy and Sell Stock
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int min[]=new int[prices.length];  //first we need to find all the min prices of the day
+        min[0]=prices[0];                   
+        for(int i=1;i<=prices.length-1;i++){
+            min[i]=Math.min(prices[i],min[i-1]);  //compare all the values/prices of the days find the best min price of all the day comparsion
+        }
+        int max=0;
+        for(int i=1;i<=prices.length-1;i++){
+            max=Math.max(max,(prices[i]-min[i-1]));  //check maximum of the profit that currentDayPrices-minimumPriceOfAllDays==Profit.........  
+        }
+        return max;
+    }
+}
+		
