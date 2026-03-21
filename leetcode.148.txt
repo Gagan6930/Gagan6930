@@ -1,0 +1,24 @@
+148. Sort List
+
+class Solution {
+    public ListNode sortList(ListNode head) {
+        ListNode l=head;        //store the head address..... 
+        ArrayList<Integer> d=new ArrayList<>();   create the arrays aList to store the values......
+        while(head!=null){          //load all the values to the Arraylist
+            d.add(head.val);
+            head=head.next;
+
+        }
+       Collections.sort(d);  ///sort the List using the collections 
+        head=l;               //again start the head address to first because of the while loop its travelled upto the null 
+       int i=0;
+       while(head!=null){   // upload all the values arraylist elemnts to the linked list agaij because we need answer in to linkednode
+        head.val=d.get(i);
+        i++;
+        head=head.next;
+       }
+       head=l;    //again start the head address from the begining
+        return head;
+    }
+}
+		
