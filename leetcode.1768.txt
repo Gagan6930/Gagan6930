@@ -1,0 +1,30 @@
+1768. Merge Strings Alternately
+
+
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        int i=0,j=0,x=0;
+    String c="";
+        while(i<word1.length() && j<word2.length()){   
+            if(x%2==0){      //if the number is the even number add the Character
+                c=c+word1.charAt(i);
+                i++;
+            }else{
+                c=c+word2.charAt(j);
+                j++;
+            }
+            x++;
+              }
+        while(i<word1.length()){  //remaining character of the words1.....
+            c=c+word1.charAt(i);
+            i++;
+
+        }
+        while(j<word2.length()){  //remaining character of the words2.....
+
+            c=c+word2.charAt(j);
+            j++;
+        }
+        return c;
+    }
+}
