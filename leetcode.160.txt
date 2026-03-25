@@ -1,0 +1,24 @@
+leetcode:160. Intersection of Two Linked Lists
+
+
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode l=headA;
+        ListNode l1=headB;
+       
+        HashSet<ListNode> h=new HashSet<>();   ///create HashSet to store the address of the ListNode.........
+        while(headA!=null){   //load All the nodes to the HashSet..........
+            h.add(headA);
+            headA=headA.next;
+ }      
+
+l=headA;
+        while(headB!=null){
+            if(h.contains(headB)){  //Then go thought the second LinkedList node compare that the address is present in the HashSet if present then print the current address of the LinkedList
+                return headB;
+            }
+            headB=headB.next;
+        }      
+return null;  //if not then print the null
+  }
+}
