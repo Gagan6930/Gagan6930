@@ -1,0 +1,30 @@
+1768. Merge Strings Alternately
+
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        String c="";
+        int i=0,j=0;
+        int pick=0;
+
+        while(i<=word1.length()-1 && j<=word2.length()-1){
+            if(pick==0){
+                c+=word1.charAt(i);
+                i++;
+                pick=1;
+            }else{
+              c+=word2.charAt(j);
+                j++;
+                pick=0;
+            }
+        }
+        while(i<=word1.length()-1){
+            c+=word1.charAt(i);
+            i++;
+        }
+        while(j<=word2.length()-1){
+            c+=word2.charAt(j);
+            j++;
+        }
+        return c;
+    }
+}
