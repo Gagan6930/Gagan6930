@@ -1,0 +1,23 @@
+392. Is Subsequence
+
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+   
+
+        if(s.length()==0){
+            return true;  //if the s string has no characters means directly return true
+        }
+        int j=0;
+        for(char c:t.toCharArray()){ 
+            if(c==s.charAt(j)){ //if the s character t character are same then go and check the next character ........
+                j++;
+                }
+           
+            if (j == s.length()){ // if the j value and the s string length is same then we return the true...............
+                return true;
+            }
+        }
+        return false;
+        
+    }
+}
