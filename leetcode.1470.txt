@@ -1,0 +1,32 @@
+1470. Shuffle the Array
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int ans[]=new int[nums.length];
+//method : 1.... 
+======================================================================================================
+        ArrayList<Integer> h1=new ArrayList<>();
+        ArrayList<Integer> h2=new ArrayList<>();
+for(int i=0;i<=n-1;i++){     //stores all the first half of the array elements to the ArrayList 
+    h1.add(nums[i]);
+}
+for(int i=n;i<nums.length;i++){   //stores all the second half of the array elements to the ArrayList 
+    h2.add(nums[i]);
+}
+int pick=0;
+for(int j=0;j<n;j++){         //itrating untill the n means half of the array...........
+        ans[pick++]=h1.get(j); //(ans[pick add that index and later it will increments ) =(stores the output of the h1. ArrayList ).................
+        ans[pick++]=h2.get(j);//(ans[pick add that index and later it will increments ) =(stores the output of the h2. ArrayList ).................
+        }
+        return ans;
+==========================================================================================================
+method : 2..............................
+int j=0;
+for(int i=0;i<n;i++){ //itrating untill the n means half of the array...........
+ans[j++]=nums[i];     //(ans[j add that index and later it will increments ) =(stores the nums [i] of the first half of the array into the ans[]).................
+ans[j++]=nums[i+n];   //(ans[j add that index and later it will increments ) =(stores the nums [i] of the second half of the array into the ans[]).................
+}
+return ans;
+}
+    
+}
