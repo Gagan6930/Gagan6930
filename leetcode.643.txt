@@ -1,0 +1,20 @@
+643. Maximum Average Subarray I
+
+class Solution {
+    public double findMaxAverage(int[] nums, int k) {
+        
+        int sum=0;      //first finding the total sum of k number elements..........................
+        for(int i=0;i<k;i++){
+            sum+=nums[i];
+        }
+        int psum=sum;  //storing in psum................
+        for(int p=k;p<nums.length;p++){ //sliding window that starts from the length is four fixed 
+           sum+=nums[p];   //adding next element of the array..........
+           sum-=nums[p-k];  //remove the first elements of the array ..................
+           psum=Math.max(psum,sum); //max of the slided array and the sum....................
+        }
+        
+       
+        return (double) psum/k;
+    }
+}
