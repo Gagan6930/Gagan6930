@@ -1,0 +1,20 @@
+206. Reverse Linked List
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode l=head;
+        ArrayList<Integer> b=new ArrayList<>();
+        while(head!=null){ //loading the Linked List value to the arraylist
+            b.add(head.val);
+            head=head.next;
+        }
+
+        ListNode dami=l;  //creating one dami ListNode..............to store the values in the reverse order it will store and the dami node head is l...................
+      for(int i=b.size()-1;i>=0 && dami!=null ;i--){
+            dami.val=b.get(i);
+        
+            dami=dami.next;
+       }
+          return l;
+    }
+}
