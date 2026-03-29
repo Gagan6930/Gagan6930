@@ -1,0 +1,8 @@
+185. Department Top Three Salaries
+
+select d.name Department,e.name Employee,e.salary Salary 
+from Employee e inner join Department d 
+on departmentId = d.id 
+where 3 > (select count(distinct e1.salary) 
+from employee e1 where e.departmentId=e1.departmentId 
+and e1.salary>e.salary);
