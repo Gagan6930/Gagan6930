@@ -1,0 +1,34 @@
+2095. Delete the Middle Node of a Linked List
+
+class Solution {
+    public ListNode deleteMiddle(ListNode head) {
+        ListNode l=head;
+        ArrayList<Integer> a=new ArrayList<>();
+     while(head!=null){
+        a.add(head.val);
+        head=head.next;
+     }
+     ListNode root=null;
+     l=head;
+//finding the mid-Linked List of the array
+      int t_index=a.size();
+     t_index=(t_index/2)+1;
+     int count=0;
+        for(int i:a){
+            count++;
+            if(count==t_index){
+                continue;  //continue skipping the particular element in the array that mid which we already finded ..........
+            }
+            ListNode temp=new ListNode(i);
+            if(root==null){
+                root=temp;
+                 head=temp;
+                 }
+             else{
+root.next=temp;
+root=root.next;
+                 }
+        }
+        return head;
+    }
+}
