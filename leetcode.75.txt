@@ -1,0 +1,14 @@
+75. Sort Colors
+
+class Solution {
+    public void sortColors(int[] nums) {
+        ArrayList<Integer> h=new ArrayList<>();
+        for(int i:nums){   //load all the elements...............
+            h.add(i);
+        }
+      Collections.sort(h);// soting all the elements ............
+      for(int i=0;i<=nums.length-1;i++){  //return back to all the elements ............
+        nums[i]=h.get(i);
+      }
+    }
+}
