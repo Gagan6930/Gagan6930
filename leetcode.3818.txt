@@ -1,0 +1,14 @@
+3818. Minimum Prefix Removal to Make Array Strictly Increasing
+
+Input: nums = [1,-1,2,3,3,4,5]
+Output: 4
+
+class Solution {
+    public int minimumPrefixLength(int[] nums) {
+        int x=nums.length-1;      //initially the x is total length of the nums...............
+        while(x>0 && nums[x-1]<nums[x]){ // if the x>0 and prev[number] is lesser than the current[number] 
+            x--;                         //decrement the x...........
+        }
+        return x;
+    }
+}
