@@ -1,0 +1,25 @@
+189. Rotate Array
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n=nums.length;
+        k=k%n;
+        res(nums,0,n-1);  //rotating all the elements
+        res(nums,0,k-1);  //rotating first k elements
+        res(nums,k,n-1);  //rotating remaining elements
+    }
+private void res(int nums[],int i,int j){   //we know that swapping the elements
+            while(i<j){
+                int temp=nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+                i++;
+                j--;
+            }
+        
+        
+    }
+}
