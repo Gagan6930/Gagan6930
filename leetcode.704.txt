@@ -1,0 +1,27 @@
+704. Determine if String Halves Are Alike
+
+Input: s = "book"
+Output: true
+
+class Solution {
+    public boolean halvesAreAlike(String s) {
+
+        int x=s.length()/2;
+       int count=0;
+       s=s.toLowerCase();
+       for(int i=0;i<s.length();i++){
+        if(s.charAt(i)=='a' || s.charAt(i)=='i' || s.charAt(i)=='e' ||  s.charAt(i)=='o' ||  s.charAt(i)=='u')
+        if(i<x){
+            count++; //counts the left of the vowels numbers
+            }else{
+            count--;  //counts the Right of the vowels numbers
+        }
+       }
+       if(count==0){
+        return true;
+       }else{
+        return false;
+       }
+
+    }
+}
