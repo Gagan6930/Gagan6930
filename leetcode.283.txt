@@ -1,0 +1,20 @@
+283. Move Zeroes
+
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+int j=0;       //it is used to the where to swift the "i"th elements........
+     for(int i=0;i<=nums.length-1;i++){  
+             if(nums[i]!=0){    //nums of the i is not 0 means then starts swapping the elements 
+                int temp=nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+                j++;
+               
+                
+            }
+        }
+    }
+}
