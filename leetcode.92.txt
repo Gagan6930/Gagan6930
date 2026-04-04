@@ -1,0 +1,35 @@
+92. Reverse Linked List II
+Input: head = [1,2,3,4,5], left = 2, right = 4
+Output: [1,4,3,2,5]
+
+class Solution {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode l=head;
+        ArrayList<Integer> h=new ArrayList<>();   //loading to arrayList
+        while(head!=null){
+            h.add(head.val);
+            head=head.next;
+        }
+       left--;
+                 right--;    
+             while(left<right){    //swaping the elements
+            int temp=h.get(left);
+            h.set((left),h.get(right));
+            h.set(right,temp);
+            left++;
+            right--;
+        }
+        ListNode root=null;  //reloading to the from the arrayList to the LinkedList
+        for(int i:h){
+            ListNode temp=new ListNode(i);
+            if(root==null){
+                root=temp;
+                head=temp;
+               }else{
+                root.next=temp;
+                root=root.next;
+            }
+        }
+        return head;
+    }
+}
