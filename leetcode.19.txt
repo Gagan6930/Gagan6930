@@ -1,0 +1,31 @@
+19. Remove Nth Node From End of List
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+
+
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode l=head;
+        ArrayList<Integer> a=new ArrayList<>();
+        while(head!=null){
+           
+            a.add(head.val);
+            head=head.next;
+        }
+        a.remove(a.size()-n);  //here we RE REMOVING THE nth element in the LINKED LIST
+        ListNode root=null;
+       l=head;
+        for(int i:a){
+            ListNode temp=new ListNode(i);
+            if(root==null){
+               root=temp;
+               head=temp;
+            }
+            else{
+              root.next=temp;
+             root=root.next;
+            }
+        }
+        return head;
+    }
+}
