@@ -1,0 +1,23 @@
+142. Linked List Cycle II
+
+
+Input: head = [1,2], pos = 0
+Output: tail connects to node index 0
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        // ListNode l=head;
+        HashSet<ListNode> h=new HashSet<>();
+
+        while(head!=null){
+            if(h.contains(head)){
+                return head;
+            }
+                h.add(head);
+                head=head.next;
+            
+        }
+        return null;
+        }
+        }
