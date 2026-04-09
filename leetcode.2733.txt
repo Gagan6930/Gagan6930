@@ -1,0 +1,20 @@
+2733. Neither Minimum nor Maximum
+
+
+Input: nums = [3,2,1,4]
+Output: 2
+Explanation: In this example, the minimum value is 1 and the maximum value is 4. Therefore, either 2 or 3 can be valid answers.
+
+
+class Solution {
+    public int findNonMinOrMax(int[] nums) {
+        Arrays.sort(nums);
+        if(nums.length<=2){
+            return -1;
+        }
+        for(int i=0;i<=nums.length-1;i++){
+            return nums[1];
+        }
+        return -1;
+    }
+}
