@@ -1,0 +1,21 @@
+1876. Substrings of Size Three with Distinct Characters
+Input: s = "xyzzaz"
+Output: 1
+Explanation: There are 4 substrings of size 3: "xyz", "yzz", "zza", and "zaz". 
+The only good substring of length 3 is "xyz".
+
+ class Solution {
+    public int countGoodSubstrings(String s) {
+        int count=0;
+        for(int i=0;i<=s.length()-3;i++){
+            HashSet<Character> hs=new HashSet<>();
+            hs.add(s.charAt(i));
+            hs.add(s.charAt(i+1));
+             hs.add(s.charAt(i+2));
+             if(hs.size()==3){
+                count++;
+             }
+        }
+        return count;
+    }
+}
